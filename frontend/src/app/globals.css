@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f3f5f2;
+  --foreground: #17211f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* { box-sizing: border-box; }
+html { background: var(--background); }
+body { margin: 0; background: var(--background); color: var(--foreground); font-family: Arial, Helvetica, sans-serif; }
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; }
+
+@layer components {
+  .field {
+    @apply h-11 w-full rounded-xl border border-slate-200 bg-white px-3.5 text-sm text-slate-800 outline-none transition placeholder:text-slate-300 focus:border-[#6d8b78] focus:ring-3 focus:ring-[#6d8b78]/10;
+  }
+  textarea.field { @apply h-auto py-3; }
+  .primary-button {
+    @apply inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-[#173f3b] px-4 text-sm font-semibold text-white transition hover:bg-[#0f302d] disabled:cursor-not-allowed disabled:opacity-55;
+  }
+  .secondary-button {
+    @apply inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-600 transition hover:bg-slate-50;
+  }
+  .icon-button {
+    @apply inline-flex size-9 items-center justify-center rounded-lg text-slate-400 transition hover:bg-slate-100 hover:text-slate-700;
+  }
+  .eyebrow {
+    @apply text-[11px] font-bold uppercase tracking-[.18em] text-[#648177];
+  }
+  .page-title {
+    @apply mt-1.5 text-3xl font-semibold tracking-[-.04em] text-slate-950 sm:text-4xl;
+  }
+  .page-copy {
+    @apply mt-2 max-w-2xl text-sm leading-6 text-slate-500;
+  }
+}

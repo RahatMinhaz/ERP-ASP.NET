@@ -1,0 +1,9 @@
+**/bin/
+**/obj/
+**/node_modules/
+**/.next/
+**/*.user
+**/*.suo
+frontend/.env.local
+*.log
+.vs/
