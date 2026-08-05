@@ -33,7 +33,7 @@ export function ReportsScreen() {
       <div className="grid gap-6 xl:grid-cols-2">
         {sections.map((section) => (
           <article key={section.title} className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white">
-            <div className="flex items-center gap-3 border-b border-slate-100 px-5 py-4"><span className="flex size-9 items-center justify-center rounded-xl bg-[#eef2e3] text-[#35554b]"><section.icon className="size-4" /></span><h2 className="font-semibold text-slate-800">{section.title}</h2></div>
+            <div className="flex items-center gap-3 border-b border-slate-100 px-5 py-4"><span className="flex size-9 items-center justify-center rounded-xl bg-[#e7f3fb] text-[#245a8d]"><section.icon className="size-4" /></span><h2 className="font-semibold text-slate-800">{section.title}</h2></div>
             {section.rows.length ? <div className="divide-y divide-slate-100">{section.rows.map((row) => (
               <div key={row.label} className="flex items-center justify-between px-5 py-4 text-sm"><div><p className="font-medium text-slate-700">{row.label}</p><p className="mt-0.5 text-xs text-slate-400">{row.count} record{row.count === 1 ? "" : "s"}</p></div><strong className="text-slate-700">{money.format(Number(row[section.key] ?? 0))}</strong></div>
             ))}</div> : <p className="px-5 py-10 text-center text-sm text-slate-400">No data available yet.</p>}

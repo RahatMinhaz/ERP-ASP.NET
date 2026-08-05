@@ -81,7 +81,7 @@ export function ModuleScreen({ config }: { config: ModuleConfig }) {
         </div>
         <div className="overflow-x-auto">
           <table className="min-w-full text-left text-sm">
-            <thead className="border-b border-slate-100 bg-[#fafbf9] text-[11px] font-semibold uppercase tracking-wider text-slate-400">
+            <thead className="border-b border-slate-100 bg-[#f8fafc] text-[11px] font-semibold uppercase tracking-wider text-slate-400">
               <tr>{config.columns.map((column) => <th key={column.key} className="whitespace-nowrap px-5 py-3.5">{column.label}</th>)}<th className="px-5 py-3.5 text-right">Actions</th></tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
@@ -206,5 +206,5 @@ function displayValue(record: ErpRecord, column: TableColumn) {
 function renderValue(record: ErpRecord, column: TableColumn) {
   const value = displayValue(record, column);
   if (column.format !== "status" || value === "—") return value;
-  return <span className="inline-flex rounded-full bg-[#edf2df] px-2.5 py-1 text-xs font-semibold text-[#3e5e3c]">{value}</span>;
+  return <span className="inline-flex rounded-full bg-[#e6f1fb] px-2.5 py-1 text-xs font-semibold text-[#2c6594]">{value}</span>;
 }

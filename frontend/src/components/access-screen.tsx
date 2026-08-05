@@ -44,7 +44,7 @@ export function AccessScreen() {
         <div className="divide-y divide-slate-100">
           {users.map((user) => (
             <button key={user.id} onClick={() => setSelected(user)} className="flex w-full items-center gap-4 px-5 py-4 text-left transition hover:bg-slate-50">
-              <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#edf2df] font-semibold text-[#35554b]">{initials(user.fullName)}</span>
+              <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#e6f1fb] font-semibold text-[#245a8d]">{initials(user.fullName)}</span>
               <span className="min-w-0 flex-1"><span className="block truncate text-sm font-semibold text-slate-800">{user.fullName}</span><span className="mt-0.5 block truncate text-xs text-slate-400">{user.email}</span></span>
               <span className="hidden text-sm text-slate-500 sm:block">{user.role}</span>
               <span className={`rounded-full px-2.5 py-1 text-xs font-semibold ${user.isActive ? "bg-emerald-50 text-emerald-700" : "bg-slate-100 text-slate-500"}`}>{user.isActive ? "Active" : "Inactive"}</span>
@@ -99,12 +99,12 @@ function AccessEditor({ user, options, onClose, onSaved }: { user: UserRow | nul
             </div>}
             <div className="grid gap-5 sm:grid-cols-2">
               <label className="text-sm font-medium text-slate-700">Role<select className="field mt-2" value={role} onChange={(e) => setRole(e.target.value)}>{options.roles.map((item) => <option key={item}>{item}</option>)}</select></label>
-              {user && <label className="flex items-center justify-between rounded-xl border border-slate-200 px-4 py-3.5 text-sm font-medium text-slate-700">Account active<input type="checkbox" checked={active} onChange={(e) => setActive(e.target.checked)} className="size-4 accent-[#173f3b]" /></label>}
+              {user && <label className="flex items-center justify-between rounded-xl border border-slate-200 px-4 py-3.5 text-sm font-medium text-slate-700">Account active<input type="checkbox" checked={active} onChange={(e) => setActive(e.target.checked)} className="size-4 accent-[#173b67]" /></label>}
             </div>
-            <div className="mt-7"><div className="flex items-center gap-2"><Shield className="size-4 text-[#487064]" /><h3 className="text-sm font-semibold text-slate-800">Claims and permissions</h3></div><p className="mt-1 text-xs text-slate-400">Only selected areas appear for this user, and the API enforces the same restrictions.</p></div>
+            <div className="mt-7"><div className="flex items-center gap-2"><Shield className="size-4 text-[#3f6f9f]" /><h3 className="text-sm font-semibold text-slate-800">Claims and permissions</h3></div><p className="mt-1 text-xs text-slate-400">Only selected areas appear for this user, and the API enforces the same restrictions.</p></div>
             <div className="mt-4 grid gap-2 sm:grid-cols-2">{options.permissions.map((permission) => (
-              <label key={permission} className={`flex cursor-pointer items-center gap-3 rounded-xl border px-3.5 py-3 text-sm transition ${permissions.includes(permission) ? "border-[#9aaf78] bg-[#f3f6e9] text-[#294b42]" : "border-slate-200 text-slate-600 hover:bg-slate-50"}`}>
-                <input type="checkbox" checked={permissions.includes(permission)} onChange={() => toggle(permission)} className="size-4 accent-[#173f3b]" />
+              <label key={permission} className={`flex cursor-pointer items-center gap-3 rounded-xl border px-3.5 py-3 text-sm transition ${permissions.includes(permission) ? "border-[#72b8dc] bg-[#edf7fc] text-[#244f7c]" : "border-slate-200 text-slate-600 hover:bg-slate-50"}`}>
+                <input type="checkbox" checked={permissions.includes(permission)} onChange={() => toggle(permission)} className="size-4 accent-[#173b67]" />
                 {permissionNames[permission] ?? permission}
               </label>
             ))}</div>
